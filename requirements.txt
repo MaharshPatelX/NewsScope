@@ -1,0 +1,6 @@
+Flask
+pymongo
+requests
+bs4
+ibm-watson
+flask-cors

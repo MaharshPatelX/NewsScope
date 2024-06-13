@@ -1,0 +1,182 @@
+{% extends "head_foot.html" %}
+{% block body %}
+
+
+<!-- {{data}} -->
+        <!-- Start Post Single Wrapper  -->
+        <div class="post-single-wrapper axil-section-gap bg-color-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!-- Start Banner Area -->
+                        <div class="banner banner-single-post post-formate post-layout axil-section-gapBottom">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <!-- Start Single Slide  -->
+                                        <div class="content-block">
+                                            <!-- Start Post Content  -->
+                                            <div class="post-content">
+                                                <div class="post-cat">
+                                                    <div class="post-cat-list">
+                                                        <a class="hover-flip-item-wrapper" href="#">
+                                                            <span class="hover-flip-item">
+                                                                <span data-text="{{data['short']['industri']}}">{{data['short']['industri']}}</span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <h1 class="title">{{data['details']['h1']}}</h1>
+                                                <!-- Post Meta  -->
+                                                <div class="post-meta-wrapper">
+                                                    <div class="post-meta">
+                                                        <!-- <div class="post-author-avatar border-rounded"> -->
+                                                            <!-- <img src="assets/images/post-images/author/author-image-3.png" alt="Author Images"> -->
+                                                        <!-- </div> -->
+                                                        <div class="content">
+                                                            <h6 class="post-author-name">
+                                                                <a class="hover-flip-item-wrapper">
+                                                                    <span class="hover-flip-item">
+                                                                        <span data-text="{{data['short']['writer']}}">{{data['short']['writer']}}</span>
+                                                                    </span>
+                                                                </a>
+                                                            </h6>
+                                                            <ul class="post-meta-list">
+                                                                <li>{{data['details']['date']}}</li>
+                                                                <li>{{data['details']['time']}}</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                   <!--  <ul class="social-share-transparent justify-content-end">
+                                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-link"></i></a></li>
+                                                    </ul> -->
+                                                </div>
+                                            </div>
+                                            <!-- End Post Content  -->
+                                        </div>
+                                        <!-- End Single Slide  -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Banner Area -->
+
+                        <div class="axil-post-details">
+                            <p class="has-medium-font-size">{{data['details']['h2']}}</p>
+                            <figure class="wp-block-image">
+                                <img src="{{data['details']['photo']}}" alt="Post Images">
+                            </figure>
+                            <p>{{data['details']['text']}}</p>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <div class="col-lg-4">
+                        <div class="sidebar-inner">
+
+
+
+                            <center><h4 class="widget-title">NLU Analysis Report</h4></center>
+
+
+
+                            <div class="axil-single-widget widget widget_postlist mb--30">
+                                <h5 class="widget-title">Category</h5>
+                                <!-- Start Single Post  -->
+                                    <div class="content-block post-medium mb--20">
+                                        <div class="post-content">
+                                            <h6 class="title"><a>{{data['analysis']['category']['label']}}</a></h6>
+                                            <div class="post-meta">
+                                                <ul class="post-meta-list">
+                                                    <li>{{data['analysis']['category']['score']}}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Single Post  -->
+                            </div>
+
+
+
+
+
+                      
+                            <!-- Start Single Widget  -->
+                            <div class="axil-single-widget widget widget_postlist mb--30">
+                                <h5 class="widget-title">Entity</h5>
+                                <!-- Start Post List  -->
+                                <div class="post-medium-block">
+
+                                    <!-- Start Single Post  -->
+                                    <div class="content-block post-medium mb--20">
+                                        <div class="post-content">
+                                            <h6 class="title"><a>
+                                                {{data['analysis']['entity']['type']}}, {{data['analysis']['entity']['text']}}
+                                            </a></h6>
+                                            <div class="post-meta">
+                                                <ul class="post-meta-list">
+                                                    <li>{{data['analysis']['entity']['relevance']}}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Single Post  -->
+
+                                    
+                                </div>
+                                <!-- End Post List  -->
+                            </div>
+                        
+
+                         
+
+                            <!-- Start Single Widget  -->
+                            <div class="axil-single-widget widget widget_archive mb--30">
+                                <h5 class="widget-title">Concept Tags</h5>
+                                <!-- Start Post List  -->
+                                <ul>
+                                    {% for i in data['analysis']['concepts'] %}
+                                        <li><a>{{i['text']}} -- {{i['relevance']}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                                <!-- End Post List  -->
+                            </div>
+                            <!-- End Single Widget  -->
+
+
+
+                            <!-- Start Single Widget  -->
+                            <div class="axil-single-widget widget widget_archive mb--30">
+                                <h5 class="widget-title">Keywords, Sentiments and Emotions</h5>
+                                <!-- Start Post List  -->
+                                <ul>
+                                    {% for j in data['analysis']['sentiments'] %}
+                                        <li><a>{{j['keyword']}} -- {{j['sentiment']}} -- {{j['emotion']}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                                <!-- End Post List  -->
+                            </div>
+                            <!-- End Single Widget  -->
+                           
+
+
+
+
+                        </div>
+                        <!-- End Sidebar Area  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Post Single Wrapper  -->
+
+    
+{% endblock %}

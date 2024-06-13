@@ -1,0 +1,125 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>NewsScope</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='assets/images/favicon.png'  ) }}">
+
+    <!-- CSS
+    ============================================ -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendor/bootstrap.min.css'  ) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendor/font-awesome.css'  ) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendor/slick.css'  ) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendor/slick-theme.css'  ) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendor/base.css'  ) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/plugins/plugins.css'  ) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css'  ) }}">
+
+</head>
+
+<body class="theme-color-2">
+    <div class="main-wrapper" id="main_div_tag">
+        <div class="mouse-cursor cursor-outer"></div>
+        <div class="mouse-cursor cursor-inner"></div>
+
+        <div id="my_switcher" class="my_switcher">
+            <ul>
+                <li>
+                    <a href="javascript: void(0);" data-theme="light" class="setColor light">
+                        <span title="Light Mode">Light</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" data-theme="dark" class="setColor dark">
+                        <span title="Dark Mode">Dark</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Start Header -->
+        <header class="header axil-header  header-dark header-sticky ">
+            <div class="header-wrap">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-3 col-12">
+                        <div class="logo">
+                            <a href="/">
+                                <p class="dark-logo">NewsScope</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 d-none d-xl-block">
+                        <div class="mainmenu-wrapper">
+                            <nav class="mainmenu-nav">
+                                <ul class="mainmenu">
+                                    <li style="float: left;"><a href="/">Home</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xl-3 col-lg-8 col-md-8 col-sm-9 col-12">
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Start Header -->
+
+
+       
+<div id="ins_data">
+     
+        {% block body %} {% endblock %}
+        
+     
+</div>
+
+
+
+
+
+        <!-- Start Back To Top  -->
+        <a id="backto-top"></a>
+        <!-- End Back To Top  -->
+
+    </div>
+
+    <!-- JS
+============================================ -->
+    <!-- Modernizer JS -->
+    <script src="{{ url_for('static', filename='assets/js/vendor/modernizr.min.js') }}"></script>
+    <!-- jQuery JS -->
+    <script src="{{ url_for('static', filename='assets/js/vendor/jquery.js') }}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{{ url_for('static', filename='assets/js/vendor/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendor/slick.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendor/tweenmax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendor/js.cookie.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/vendor/jquery.style.switcher.js') }}"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<!--suppress JSUnresolvedLibraryURL -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!--suppress JSUnresolvedLibraryURL -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <!-- Main JS -->
+    <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='assets/js/vendor/mongo.js') }}"></script> -->
+
+</body>
+
+
+</html>
